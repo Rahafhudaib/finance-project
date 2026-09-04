@@ -1,4 +1,8 @@
-from langchain_community.document_loaders import TextLoader
-from langchain_community.document_loaders import UnstructuredURLLoader
-from langchain_openai import OpenAIEmbeddings, ChatOpenAI
+
+from fastapi import APIRouter, FastAPI
+
+app = FastAPI()
+
+
+app.include_router(Routes.RAG_routes.router)
 

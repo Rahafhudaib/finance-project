@@ -8,3 +8,4 @@ tiktoken
 faiss-cpu
 python-magic
 openai
+fastapi
