@@ -30,7 +30,7 @@ async def upload_and_store_url_pages(request:URLsRequest):
         vectorstore.save_local(FAISS_index_PATH)
 
         return {"message":"Documents processed and stored successfully."
-                "chunks_created": len(documents)}
+               , "chunks_created " : len(documents)}
  except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
    

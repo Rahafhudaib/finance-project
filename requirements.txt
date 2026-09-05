@@ -9,3 +9,5 @@ faiss-cpu
 python-magic
 openai
 fastapi
+uvicorn == 0.49.0
+python-multipart==0.0.32

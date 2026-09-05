@@ -1,0 +1,18 @@
+from langchain_core.prompts import PromptTemplate
+from langchain_openai import ChatOpenAI
+from langchain_core.runnables import RunnablePassthrough
+from langchain_core.output_parsers import StrOutputParser
+from fastapi import Depends,APIRouter, HTTPException
+from pydantic import BaseModel
+from helpers.config import get_settings, Settings
+
+
+chatrouter = APIRouter(prefix="/chatbot", tags=["Chatbot"])
+
+class ChatRequest(BaseModel):
+    question: str
+
+
+@chatrouter.post("/chat")
+async def chat_with_news(request: ChatRequest, settings: Settings = Depends(get_settings)):
+    try:
