@@ -1,8 +1,7 @@
 
 from fastapi import APIRouter, FastAPI
 from Routes.RAG_routes import router
-from Routes.chatbot import chatrouter  # pyright: ignore[reportMissingImports]
-
+from Routes.chatbot import chatrouter  
 app = FastAPI()
 
 

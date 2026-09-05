@@ -8,7 +8,7 @@ from typing import List
 from langchain_community import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 
-FAISS_index_PATH = "faiss_index"
+FAISS_INDEX_PATH = "faiss_index"
 
 
 router = APIRouter(Prefix="/rag", tags=["RAG"])
@@ -27,7 +27,7 @@ async def upload_and_store_url_pages(request:URLsRequest):
         documents = splitter.split_documents(documents)
         embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 ")
         vectorstore = FAISS.from_documents(documents, embeddings)
-        vectorstore.save_local(FAISS_index_PATH)
+        vectorstore.save_local(FAISS_INDEX_PATH)
 
         return {"message":"Documents processed and stored successfully."
                , "chunks_created " : len(documents)}

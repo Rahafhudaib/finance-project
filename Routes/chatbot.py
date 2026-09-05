@@ -7,7 +7,7 @@ from fastapi import Depends,APIRouter, HTTPException
 from pydantic import BaseModel
 from helpers.config import get_settings, Settings
 from langchain_community.vectorstores import FAISS
-
+from Routes.RAG_routes import FAISS_INDEX_PATH
 
 
 chatrouter = APIRouter(prefix="/chatbot", tags=["Chatbot"])
