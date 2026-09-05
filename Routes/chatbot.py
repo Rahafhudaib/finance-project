@@ -41,7 +41,7 @@ Answer:"""
     llm = ChatOpenAI(
         api_key=settings.openai_api_key,
         base_url="https://openrouter.ai/api/v1",
-        model="meta-llama/llama-3.2-3b-instruct:free",
+        model="openrouter/free",
         temperature=0.7,
     )
 
